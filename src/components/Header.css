@@ -1,6 +1,7 @@
 .header {
   position: fixed;
-  top: 0;
+  top: 40px;
+  /* Space for TopBar */
   left: 0;
   right: 0;
   background: linear-gradient(135deg, #FF9933 0%, #FF6600 100%);
@@ -100,7 +101,7 @@
   .hamburger {
     display: flex;
   }
-  
+
   .nav {
     position: absolute;
     top: 100%;
@@ -112,14 +113,123 @@
     overflow: hidden;
     transition: max-height 0.3s ease;
   }
-  
+
   .nav-open {
     max-height: 400px;
   }
-  
+
   .nav-list {
     flex-direction: column;
     padding: 2rem;
     gap: 1.5rem;
+  }
+}
+
+/* Contact Toggle Styles - Hidden on Desktop, Shown on Mobile */
+.mobile-header-contact {
+  display: none;
+  /* Hidden on desktop since TopBar shows contact info */
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  /* Aligned right */
+  z-index: 1002;
+}
+
+.contact-toggle-btn {
+  background-color: #F68712;
+  color: white;
+  padding: 8px 15px;
+  font-weight: bold;
+  border: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  /* Rounded bottom corners */
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.contact-toggle-btn:hover {
+  background-color: #E65100;
+  padding-bottom: 12px;
+  /* Slight animation */
+}
+
+.header-contact-dropdown {
+  background-color: #A05205;
+  padding: 15px;
+  border-radius: 10px;
+  border-top-right-radius: 0;
+  /* Connect to button visually */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: slideDown 0.3s ease;
+  width: 280px;
+  margin-top: 5px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.header-contact-dropdown a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.2s;
+}
+
+.header-contact-dropdown a:hover {
+  color: #FFD180;
+}
+
+.header-socials {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  justify-content: center;
+}
+
+.header-socials a {
+  color: white;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+  .header {
+    top: 0;
+  }
+
+  .mobile-header-contact {
+    display: flex;
+    /* Show on mobile */
+    right: 0;
+  }
+
+  .contact-toggle-btn {
+    border-bottom-right-radius: 0;
+    /* Flush right on mobile */
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

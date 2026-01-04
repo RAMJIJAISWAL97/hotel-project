@@ -1,4 +1,5 @@
 import React from 'react';
+import TopBar from './components/TopBar';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -9,11 +10,10 @@ import Contact from './components/Contact';
 import FeaturedAmenities from './components/FeaturedAmenities'; // Importing the new component
 import Footer from './components/Footer';
 import SpecialOffers from './components/SpecialOffers'; // Importing the new component
-import './App.css';
-
 function App() {
   return (
-    <div className="App">
+    <div>
+      <TopBar />
       <Header />
       <div id="home"><Hero /></div>
       <FeaturedAmenities /> {/* Adding the new component */}
@@ -24,7 +24,7 @@ function App() {
       <div id="gallery"><Gallery /></div>
       <div id="contact"><Contact /></div>
       <Footer />
-    </div>
+    </div >
   );
 }
 
