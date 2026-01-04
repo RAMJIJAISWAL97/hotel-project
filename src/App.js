@@ -1,5 +1,4 @@
 import React from 'react';
-import TopBar from './components/TopBar';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -13,7 +12,6 @@ import SpecialOffers from './components/SpecialOffers'; // Importing the new com
 function App() {
   return (
     <div>
-      <TopBar />
       <Header />
       <div id="home"><Hero /></div>
       <FeaturedAmenities /> {/* Adding the new component */}

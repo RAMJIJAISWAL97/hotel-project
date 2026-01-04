@@ -16,6 +16,30 @@ const Header = () => {
   return (
     <header className="header">
       <div className="container">
+        {/* Desktop Top Bar - Contact Details (Hidden on Mobile) */}
+        <div className="desktop-top-bar">
+          <div className="desktop-top-left">
+            <a href="tel:+919696248024" className="top-link">
+              <i className="fas fa-phone-alt"></i> +91 9696248024
+            </a>
+            <a href="mailto:home@ayodhyatourstravels.com" className="top-link">
+              <i className="fas fa-envelope"></i> home@ayodhyatourstravels.com
+            </a>
+          </div>
+          <div className="desktop-top-right">
+            <a href="#online-payments" className="payments-btn">Online Payments</a>
+            <a href="#testimonials" className="top-link">Testimonials</a>
+            <span className="separator">|</span>
+            <a href="#faqs" className="top-link">FAQ's</a>
+            <div className="top-social-icons">
+              <a href="#facebook"><i className="fab fa-facebook-f"></i></a>
+              <a href="#twitter"><i className="fab fa-x-twitter"></i></a>
+              <a href="#instagram"><i className="fab fa-instagram"></i></a>
+              <a href="#linkedin"><i className="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+
         {/* Mobile Contact Toggle - Integrated into Header */}
         <div className="mobile-header-contact">
           <button className="contact-toggle-btn" onClick={toggleContact}>
